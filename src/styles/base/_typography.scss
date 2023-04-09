@@ -1,0 +1,50 @@
+@use "../abstracts/variables" as *;
+
+// Base font - Outfit
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap');
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: $font-weight-light;
+}
+
+// Headings
+.heading {
+  &--large {
+    font-size: $font-heading-large;
+    font-weight: $font-weight-light;
+  }
+
+  &--medium {
+    font-size: $font-heading-small;
+    font-weight: $font-weight-light;
+  }
+
+  &--small {
+    font-size: $font-heading-small;
+    font-weight: $font-weight-medium;
+  }
+
+  &--extra-small {
+    font-size: $font-heading-extra-small;
+    font-weight: $font-weight-medium;
+  }
+}
+
+// Body font
+.body-text {
+  font-weight: $font-weight-light;
+
+  &--medium {
+    font-size: $font-body-medium;
+  }
+
+  &--small {
+    font-size: $font-body-small;
+  }
+}
+
+// Utilities
+.text-center {
+  text-align: center;
+}

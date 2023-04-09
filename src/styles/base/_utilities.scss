@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+
+// Bottom margins
+.mb {
+  &-smd {
+    margin-bottom: $space-smd;
+  }
+
+  &-md {
+    margin-bottom: $space-md;
+  }
+
+  &-xmd {
+    margin-bottom: $space-xmd;
+  }
+}

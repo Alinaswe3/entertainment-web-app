@@ -1,4 +1,4 @@
-export const IconSearh = ({ cssClass }) => {
+export const IconSearch = ({ cssClass }) => {
   return (
     <svg
       className={cssClass}

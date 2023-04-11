@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.searchbar {
+  display: flex;
+  position: sticky;
+  top: $space-smd;
+  width: 100%;
+  height: max-content;
+  gap: $space-smd;
+
+  &__button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
+
+  &__input {
+    display: flex;
+    width: 100%;
+
+    input {
+      width: 100%;
+      background-color: inherit;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid inherit;
+      transition: all 0.3s;
+      padding: $space-xsm 0; // also fixes jerking from border addition
+      color: $color-white;
+      caret-color: $color-red;
+      @include remove-auto-styles($color-white, $color-darker-blue);
+      cursor: pointer;
+
+      &:focus {
+        border-bottom: 1px solid $color-light-blue;
+      }
+    }
+  }
+
+  &__icon {
+    height: $space-md;
+    width: $space-md;
+
+    & path {
+      fill: $color-white;
+    }
+  }
+}

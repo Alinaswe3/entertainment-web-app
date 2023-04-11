@@ -33,15 +33,7 @@
       transition: all 0.3s;
       padding: $space-xsm;
 
-
-      // Remove chrome autocomplete styles
-      &:-webkit-autofill,
-      &:-webkit-autofill:hover,
-      &:-webkit-autofill:focus,
-      &:-webkit-autofill:active {
-        box-shadow: 0 0 0 30px $color-dark-blue inset;
-        -webkit-text-fill-color: $color-white;
-      }
+      @include remove-auto-styles($color-white, $color-dark-blue);
 
       // Make sure error styles are ony shown when input is
       // focused

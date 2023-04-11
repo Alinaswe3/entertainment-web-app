@@ -4,7 +4,7 @@
   background-color: inherit;
   padding: $space-md;
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: max-content 1fr;
 
   // Creating a space between the navbar and main content
   gap: $space-xmd;

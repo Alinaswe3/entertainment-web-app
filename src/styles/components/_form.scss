@@ -6,6 +6,16 @@
   flex-direction: column;
   gap: $space-smd;
 
+  &-error {
+    & div {
+      display: block;
+    }
+
+    & input {
+      border-bottom: 1px solid $color-red !important;
+    }
+  }
+
   &-input {
     position: relative;
 

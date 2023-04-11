@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 /**
  * An input component used by user to enter data
@@ -9,17 +9,35 @@ import { useRef } from "react";
  * @param handleChange - sets the state of the input element in parent form
  */
 const FormInput = ({ type, id, placeText, handleChange }) => {
+  const [hasError, setHasError] = useState(false);
+
   const inputRef = useRef<HTMLInputElement>(null!);
+  const divRef = useRef<HTMLInputElement>(null!);
 
   /**
    * Sets the state of input element in the parent form
    */
   const handleInputChange = () => {
-    handleChange(inputRef.current.value);
+    const curValue = inputRef.current.value;
+    handleChange(curValue);
+  };
+
+  /**
+   * Toggles the error state whenever the input field is empty
+   */
+  const toggleError = () => {
+    const curValue = inputRef.current.value;
+    if (curValue !== "") {
+      divRef.current.classList.remove("form-error");
+      setHasError(false);
+    } else {
+      divRef.current.classList.add("form-error");
+      setHasError(true);
+    }
   };
 
   return (
-    <div className="form-input">
+    <div id={`${id}-error`} ref={divRef} className="form-input">
       <label htmlFor={id} hidden>
         {type}:
       </label>
@@ -29,10 +47,10 @@ const FormInput = ({ type, id, placeText, handleChange }) => {
         type={type}
         placeholder={placeText}
         onChange={handleInputChange}
+        onInput={toggleError}
+        onBlur={toggleError}
       />
-      <div id={`${id}-error`} className="form-input__error">
-        Can't be empty
-      </div>
+      <div className="form-input__error">Can't be empty</div>
     </div>
   );
 };

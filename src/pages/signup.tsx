@@ -20,23 +20,18 @@ const Signup = () => {
    */
   const checkInput = () => {
     if (email === "")
-      document.getElementById("email-error")?.classList.add("display-block");
-    else
-      document.getElementById("email-error")?.classList.remove("display-block");
+      document.getElementById("email-error")?.classList.add("form-error");
+    else document.getElementById("email-error")?.classList.remove("form-error");
     if (password === "")
-      document.getElementById("password-error")?.classList.add("display-block");
+      document.getElementById("password-error")?.classList.add("form-error");
     else
-      document
-        .getElementById("password-error")
-        ?.classList.remove("display-show");
+      document.getElementById("password-error")?.classList.remove("form-error");
     if (reEnteredPassword === "")
-      document
-        .getElementById("re-password-error")
-        ?.classList.add("display-block");
+      document.getElementById("re-password-error")?.classList.add("form-error");
     else
       document
         .getElementById("re-password-error")
-        ?.classList.remove("display-show");
+        ?.classList.remove("form-error");
   };
 
   /**

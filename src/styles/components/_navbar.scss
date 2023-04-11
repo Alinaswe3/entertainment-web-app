@@ -1,0 +1,43 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.navbar {
+  // Makes the navbar remain sticky as user scrolls the page
+  position: sticky;
+  top: $space-md;
+
+  height: calc(100vh - $space-md - $space-md);
+  background-color: $color-dark-blue;
+  width: max-content;
+  padding: $space-smd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: calc($space-sm + $space-sm);
+
+  &__top {
+    display: grid;
+    gap: $space-xmd;
+    justify-items: center;
+  }
+
+  &__list {
+    list-style: none;
+    display: grid;
+    gap: $space-xmd;
+    justify-items: center;
+  }
+
+  &__icon {
+
+  }
+
+  &__avatar {
+    width: 4rem;
+    height: 4rem;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+  }
+
+}

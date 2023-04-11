@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+
+.home {
+  background-color: inherit;
+  padding: $space-md;
+  display: grid;
+  grid-auto-flow: column;
+
+  // Creating a space between the navbar and main content
+  gap: $space-xmd;
+}
+
+.main-content {
+  max-width: max-content;
+}

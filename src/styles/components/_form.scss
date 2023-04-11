@@ -1,0 +1,70 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-smd;
+
+  &-input {
+    position: relative;
+
+    input {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background-color: $color-dark-blue;
+      color: $color-white;
+      width: 100%;
+      height: 3.6rem;
+      font-size: $font-body-medium;
+      caret-color: $color-red;
+      border-bottom: 0.1rem solid $color-light-blue;
+      transition: all 0.3s;
+      padding: $space-xsm;
+
+
+      // Remove chrome autocomplete styles
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        box-shadow: 0 0 0 30px $color-dark-blue inset;
+        -webkit-text-fill-color: $color-white;
+      }
+
+      // Make sure error styles are ony shown when input is
+      // focused
+      &:focus {
+        &:invalid {
+          border-bottom: 0.1rem solid $color-red;
+        }
+      }
+
+    }
+
+    &__error {
+      display: none;
+      position: absolute;
+      color: $color-red;
+      top: 12px;
+      left: 255px;
+    }
+  }
+
+  &__submit {
+    font-family: inherit;
+    padding: $space-xsm;
+    border-radius: $space-sm;
+    border: none;
+    background-color: $color-red;
+    color: $color-white;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-dark-blue;
+    }
+  }
+}

@@ -12,3 +12,10 @@
   justify-content: center;
   gap: $gap;
 }
+
+// Mixin to center everything with flexbox
+@mixin flex-center-all() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

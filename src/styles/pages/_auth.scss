@@ -1,0 +1,21 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.auth {
+  @include flex-center-all;
+  flex-direction: column;
+  gap: 8.3rem;
+  min-height: 100vh;
+
+  &__form {
+    background-color: $color-dark-blue;
+    border-radius: 1.6rem;
+    padding: $space-md;
+    width: 100%;
+    max-width: 40rem;
+  }
+
+  &--alt {
+    text-align: center;
+  }
+}

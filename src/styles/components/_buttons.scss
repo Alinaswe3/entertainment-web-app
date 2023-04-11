@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+
+.link {
+  &:link,
+  &:visited {
+    color: $color-red;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-white;
+  }
+}

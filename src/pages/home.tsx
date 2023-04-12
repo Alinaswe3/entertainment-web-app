@@ -5,7 +5,13 @@ const Home = () => {
   return (
     <main className="home">
       <NavBar />
-      <SearchBar />
+      <div className="home__main">
+        <SearchBar />
+        <div className="movies">
+          <div className="movies__trending"></div>
+          <div className="movies__list"></div>
+        </div>
+      </div>
     </main>
   );
 };

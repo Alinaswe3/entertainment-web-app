@@ -15,6 +15,7 @@ const SearchBar = () => {
           className="heading--medium"
           type="text"
           placeholder="Search for movies or TV series"
+          autoComplete="off"
         />
       </div>
     </div>

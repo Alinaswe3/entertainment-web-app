@@ -1,34 +1,17 @@
 @use "../abstracts/variables" as *;
 
 .movies {
-  display: flex;
-  flex-direction: column;
-  background-color: royalblue;
+  display: grid;
 
   &__trending {
-    position: fixed;
-    background-color: darkcyan;
-    height: 30rem;
+    height: max-content;
     overflow-x: auto;
     width: 100%;
+    margin-bottom: $space-xmd;
   }
 
   &__container {
-    background-color: greenyellow;
     overflow-y: auto;
-    padding-top: 30rem;
   }
 
-  &__list {
-    height: 120rem;
-    background-color: red;
-  }
-}
-
-.trend-movies {
-  width: 100%;
-  margin-left: 5rem;
-  margin-right: 10rem;
-  height: 100%;
-  background-color: rosybrown;
 }

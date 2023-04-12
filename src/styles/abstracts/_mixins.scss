@@ -2,14 +2,14 @@
 @mixin flex-center-vertical($gap: 2.4rem) {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
   gap: $gap;
 }
 
 // Mixin to center anything in container horizontally
 @mixin flex-center-horizontal($gap: 2.4rem) {
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: $gap;
 }
 

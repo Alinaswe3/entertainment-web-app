@@ -8,8 +8,10 @@
 
   // Creating a space between the navbar and main content
   gap: $space-xmd;
-}
 
-.main-content {
-  max-width: max-content;
+  &__main {
+    background-color: orange;
+    overflow-y: auto;
+    height: calc(100vh - $space-xlg);
+  }
 }

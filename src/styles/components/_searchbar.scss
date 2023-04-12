@@ -4,10 +4,10 @@
 .searchbar {
   display: flex;
   position: sticky;
-  top: $space-smd;
-  width: 100%;
+  top: 0;
   height: max-content;
   gap: $space-smd;
+  background-color: firebrick;
 
   &__button {
     border: none;

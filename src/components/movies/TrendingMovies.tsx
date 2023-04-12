@@ -1,7 +1,26 @@
 import Image from "next/image";
-import { IconCategoryMovie, IconCategoryTv } from "@/components/Icons";
+import {
+  IconBookmarkEmpty,
+  IconBookmarkFull,
+  IconCategoryMovie,
+  IconCategoryTv,
+} from "@/components/Icons";
+import { useState } from "react";
 
-const TrendMovie = ({ title, thumbnail, year, category, rating }) => {
+const TrendMovie = ({
+  title,
+  thumbnail,
+  year,
+  category,
+  rating,
+  isBookmarked,
+}) => {
+  const [bookmarkState, setBookmarkState] = useState(isBookmarked);
+
+  const toggleBookmark = () => {
+    setBookmarkState((prevState) => !prevState);
+  };
+
   return (
     <div className="trend-movies__item">
       <Image
@@ -11,6 +30,9 @@ const TrendMovie = ({ title, thumbnail, year, category, rating }) => {
         width={200}
         height={60}
       />
+      <button className="trend-movies__item-bookmark" onClick={toggleBookmark}>
+        {bookmarkState ? <IconBookmarkFull /> : <IconBookmarkEmpty />}
+      </button>
       <div className="trend-movies__details">
         <div className="trend-movies__description">
           <span className="body-text body-text--medium trend-movies__item-year">

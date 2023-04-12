@@ -5,13 +5,13 @@
   display: grid;
   grid-auto-flow: column;
   gap: 4rem;
-  position: relative;
 
   &__details {
     position: absolute;
-    top: 70%;
-    margin-left: 1.7%;
+    bottom: 6%;
+    //margin-left: 1.7%;
     width: max-content;
+    left: 5%;
   }
 
   &__description {
@@ -23,8 +23,22 @@
     height: 23rem;
     border-radius: $space-ssm;
     overflow: hidden;
-    background-color: darkolivegreen;
     cursor: pointer;
+    position: relative;
+
+    &-bookmark {
+      position: absolute;
+      width: $space-md;
+      height: $space-md;
+      background-color: $color-dark-blue;
+      border: none;
+      @include flex-center-all();
+      border-radius: 50%;
+      z-index: 99;
+      left: 90%;
+      top: 6%;
+      cursor: pointer;
+    }
 
     &-thumbnail {
       width: 100%;

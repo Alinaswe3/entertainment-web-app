@@ -4,6 +4,7 @@ import {
   IconBookmarkFull,
   IconCategoryMovie,
   IconCategoryTv,
+  IconPlay,
 } from "@/components/Icons";
 import { useState } from "react";
 
@@ -23,6 +24,14 @@ const TrendMovie = ({
 
   return (
     <div className="trend-movies__item">
+      <div className="trend-movies__item-modal">
+        <div className="modal-background"></div>
+        <div className="trend-movies__item-play">
+          <IconPlay />
+          <span className="heading--extra-small">Play</span>
+          <div className="play-background"></div>
+        </div>
+      </div>
       <Image
         className="trend-movies__item-thumbnail"
         src={thumbnail}

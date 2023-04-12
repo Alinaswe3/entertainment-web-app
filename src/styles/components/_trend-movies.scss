@@ -12,6 +12,13 @@
     //margin-left: 1.7%;
     width: max-content;
     left: 5%;
+
+    h3 {
+      position: sticky; // In order for the z-index to have an effect
+      color: $color-white;
+      opacity: 100%;
+      z-index: 3;
+    }
   }
 
   &__description {
@@ -26,6 +33,29 @@
     cursor: pointer;
     position: relative;
 
+    &-modal {
+      visibility: hidden;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      @include flex-center-all;
+      transition: all 0.15s;
+    }
+
+    &-play {
+      padding: $space-ssm;
+      border-radius: 2.8rem;
+      @include flex-center-horizontal($space-xsm);
+      z-index: 3;
+      position: relative;
+      overflow: hidden;
+
+      span {
+        margin-right: $space-sm;
+      }
+    }
+
     &-bookmark {
       position: absolute;
       width: $space-md;
@@ -34,7 +64,7 @@
       border: none;
       @include flex-center-all();
       border-radius: 50%;
-      z-index: 99;
+      z-index: 10;
       left: 90%;
       top: 6%;
       cursor: pointer;
@@ -57,4 +87,27 @@
   height: 0.3rem;
   background-color: $color-white;
   border-radius: 50%;
+}
+
+.modal-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 20%;
+}
+
+.play-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $color-white;
+  top: 0;
+  left: 0;
+  opacity: 40%;
+  z-index: -1;
+}
+
+.trend-movies__item:hover .trend-movies__item-modal {
+  visibility: visible;
 }

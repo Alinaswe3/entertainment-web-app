@@ -1,4 +1,4 @@
-import TrendCard from "@/components/movies/TrendCard";
+import MovieCard from "@/components/movies/MovieCard";
 
 const TrendingMovies = ({ movies }) => {
   return (
@@ -8,7 +8,7 @@ const TrendingMovies = ({ movies }) => {
         <div className="trend-movies">
           {movies.map((movie) => {
             return (
-              <TrendCard
+              <MovieCard
                 key={movie.title + movie.year + movie.rating}
                 title={movie.title}
                 thumbnail={movie.thumbnail}

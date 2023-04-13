@@ -17,19 +17,35 @@ const MovieCard = ({
     setBookmarkState((prevState) => !prevState);
   };
 
+  let movieHero = (
+    <div className="movie-card__hero">
+      <MovieHero
+        title={title}
+        thumbnail={thumbnail}
+        isTrending={isTrending}
+        isBookmarked={bookmarkState}
+        setBookmark={toggleBookmark}
+      />
+    </div>
+  );
+
+  if (isTrending) {
+    movieHero = (
+      <MovieHero
+        title={title}
+        thumbnail={thumbnail}
+        isTrending={isTrending}
+        isBookmarked={bookmarkState}
+        setBookmark={toggleBookmark}
+      />
+    );
+  }
+
   return (
     <div
       className={`${isTrending ? "trend-movies__item" : ""} movie-card__item`}
     >
-      <div className="movie-card__hero">
-        <MovieHero
-          title={title}
-          thumbnail={thumbnail}
-          isTrending={isTrending}
-          isBookmarked={bookmarkState}
-          setBookmark={toggleBookmark}
-        />
-      </div>
+      {movieHero}
       <MovieDescription
         title={title}
         year={year}

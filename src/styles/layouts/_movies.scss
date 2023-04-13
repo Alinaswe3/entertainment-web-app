@@ -15,3 +15,14 @@
   }
 
 }
+
+.movie {
+  &-grid {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 28rem));
+      gap: $space-md;
+      overflow-y: auto;
+    }
+  }
+}

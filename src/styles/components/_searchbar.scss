@@ -4,7 +4,7 @@
 .searchbar {
   display: flex;
   position: sticky;
-  top: 0;
+  top: -2px; // Makes sure no content is shown behind stick header
   height: max-content;
   gap: $space-smd;
 

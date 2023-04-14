@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MovieDescription from "@/components/movies/MovieDescription";
 import MovieHero from "@/components/movies/MovieHero";
+import Context from "@/context/Context";
+import { CATEGORY_HOME } from "@/utilities/constants";
 
 const MovieCard = ({
   title,
@@ -12,6 +14,10 @@ const MovieCard = ({
   isTrending,
 }) => {
   const [bookmarkState, setBookmarkState] = useState(isBookmarked);
+  const { currentTab } = useContext(Context);
+
+  // Make sure trending content is only shown on the home page
+  const isContentTrending = currentTab === CATEGORY_HOME && isTrending;
 
   const toggleBookmark = () => {
     setBookmarkState((prevState) => !prevState);
@@ -22,19 +28,19 @@ const MovieCard = ({
       <MovieHero
         title={title}
         thumbnail={thumbnail}
-        isTrending={isTrending}
+        isTrending={isContentTrending}
         isBookmarked={bookmarkState}
         setBookmark={toggleBookmark}
       />
     </div>
   );
 
-  if (isTrending) {
+  if (isContentTrending) {
     movieHero = (
       <MovieHero
         title={title}
         thumbnail={thumbnail}
-        isTrending={isTrending}
+        isTrending={isContentTrending}
         isBookmarked={bookmarkState}
         setBookmark={toggleBookmark}
       />
@@ -43,7 +49,9 @@ const MovieCard = ({
 
   return (
     <div
-      className={`${isTrending ? "trend-movies__item" : ""} movie-card__item`}
+      className={`${
+        isContentTrending ? "trend-movies__item" : ""
+      } movie-card__item`}
     >
       {movieHero}
       <MovieDescription
@@ -51,7 +59,7 @@ const MovieCard = ({
         year={year}
         category={category}
         rating={rating}
-        isTrending={isTrending}
+        isTrending={isContentTrending}
       />
     </div>
   );

@@ -2,25 +2,38 @@ import TrendingMovies from "@/components/movies/TrendingMovies";
 import MovieGrid from "@/components/movies/MovieGrid";
 import { useContext } from "react";
 import Context from "@/context/Context";
-import { CATEGORY_HOME } from "@/utilities/constants";
+import {
+  CATEGORY_BOOKMARKS,
+  CATEGORY_HOME,
+  CATEGORY_MOVIES,
+  CATEGORY_TV_SERIES,
+  DEFAULT_HEADING,
+  MOVIE_HEADING,
+} from "@/utilities/constants";
+import Bookmarked from "@/components/movies/Bookmarked";
 
 const Movies = ({ content }) => {
   const { currentSearch, currentTab } = useContext(Context);
 
   const curSearch = currentSearch.trim().toLowerCase();
-  let renderedMovies = content;
 
-  if (currentTab === "movies") {
+  let renderedMovies = content;
+  let renderedHeading = DEFAULT_HEADING;
+
+  // Set the rendered content for a selected tab
+  if (currentTab === CATEGORY_MOVIES) {
     renderedMovies = renderedMovies.filter(
-      (movie) => movie.category === "Movie"
+      (movie) => movie.category === CATEGORY_MOVIES
     );
+    renderedHeading = MOVIE_HEADING;
   }
-  if (currentTab === "tv-series") {
+  if (currentTab === CATEGORY_TV_SERIES) {
     renderedMovies = renderedMovies.filter(
-      (movie) => movie.category === "TV Series"
+      (movie) => movie.category === CATEGORY_TV_SERIES
     );
+    renderedHeading = CATEGORY_TV_SERIES;
   }
-  if (currentTab === "bookmarks") {
+  if (currentTab === CATEGORY_BOOKMARKS) {
     renderedMovies = renderedMovies.filter((movie) => movie.isBookmarked);
   }
 
@@ -29,6 +42,7 @@ const Movies = ({ content }) => {
     renderedMovies = renderedMovies.filter((movie) =>
       movie.title.toLowerCase().includes(curSearch)
     );
+    renderedHeading = `Found ${renderedMovies.length} results for '${curSearch}'`;
   }
 
   return (
@@ -38,15 +52,11 @@ const Movies = ({ content }) => {
       ) : (
         <></>
       )}
-      {/*<MovieGrid*/}
-      {/*  heading={*/}
-      {/*    curSearch.length !== 0*/}
-      {/*      ? `Found ${renderedMovies.length} results for '${curSearch}'`*/}
-      {/*      : "Recommended for you"*/}
-      {/*  }*/}
-      {/*  movies={renderedMovies}*/}
-      {/*/>*/}
-      <MovieGrid heading={currentTab} movies={renderedMovies} />
+      {currentTab !== CATEGORY_BOOKMARKS ? (
+        <MovieGrid heading={renderedHeading} movies={renderedMovies} />
+      ) : (
+        <Bookmarked content={renderedMovies} />
+      )}
     </div>
   );
 };

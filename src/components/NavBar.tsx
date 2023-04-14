@@ -8,7 +8,12 @@ import {
 import Image from "next/image";
 import { useContext } from "react";
 import Context from "@/context/Context";
-import { CATEGORY_HOME } from "@/utilities/constants";
+import {
+  CATEGORY_BOOKMARKS,
+  CATEGORY_HOME,
+  CATEGORY_MOVIES,
+  CATEGORY_TV_SERIES,
+} from "@/utilities/constants";
 
 const NavBar = () => {
   const { updateTab, currentTab } = useContext(Context);
@@ -25,19 +30,25 @@ const NavBar = () => {
               }`}
             />
           </li>
-          <li onClick={() => updateTab("movies")}>
+          <li onClick={() => updateTab(CATEGORY_MOVIES)}>
             <IconNavMovies
-              cssClass={`${currentTab === "movies" ? "navbar__active" : ""}`}
+              cssClass={`${
+                currentTab === CATEGORY_MOVIES ? "navbar__active" : ""
+              }`}
             />
           </li>
-          <li onClick={() => updateTab("tv-series")}>
+          <li onClick={() => updateTab(CATEGORY_TV_SERIES)}>
             <IconNavTvSeries
-              cssClass={`${currentTab === "tv-series" ? "navbar__active" : ""}`}
+              cssClass={`${
+                currentTab === CATEGORY_TV_SERIES ? "navbar__active" : ""
+              }`}
             />
           </li>
-          <li onClick={() => updateTab("bookmarks")}>
+          <li onClick={() => updateTab(CATEGORY_BOOKMARKS)}>
             <IconNavBookmark
-              cssClass={`${currentTab === "bookmarks" ? "navbar__active" : ""}`}
+              cssClass={`${
+                currentTab === CATEGORY_BOOKMARKS ? "navbar__active" : ""
+              }`}
             />
           </li>
         </ul>

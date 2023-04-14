@@ -24,7 +24,7 @@ export default Home;
 export async function getStaticProps() {
   // Reading contents from file in public folder
   // and then pre-rendering the page with the data
-  const filePath = path.join(process.cwd(), "public/data.json");
+  const filePath = path.join(process.cwd(), "src/data/data.json");
   const fileContents = fs.readFileSync(filePath, "utf8");
   const data = JSON.parse(fileContents);
 

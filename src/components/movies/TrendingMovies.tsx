@@ -6,20 +6,22 @@ const TrendingMovies = ({ movies }) => {
       <h2 className="heading--large mb-smd">Trending</h2>
       <div className="movies__trending">
         <div className="trend-movies">
-          {movies.map((movie) => {
-            return (
-              <MovieCard
-                key={movie.title + movie.year + movie.rating}
-                title={movie.title}
-                thumbnail={movie.thumbnail}
-                year={movie.year}
-                rating={movie.rating}
-                category={movie.category}
-                isBookmarked={movie.isBookmarked}
-                isTrending={movie.isTrending}
-              />
-            );
-          })}
+          {movies
+            .filter((movie) => movie.isTrending)
+            .map((movie) => {
+              return (
+                <MovieCard
+                  key={movie.title + movie.year + movie.rating}
+                  title={movie.title}
+                  thumbnail={movie.thumbnail.regular.large}
+                  year={movie.year}
+                  rating={movie.rating}
+                  category={movie.category}
+                  isBookmarked={movie.isBookmarked}
+                  isTrending={movie.isTrending}
+                />
+              );
+            })}
         </div>
       </div>
     </>

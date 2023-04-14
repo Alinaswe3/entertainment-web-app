@@ -1,15 +1,14 @@
 import TrendingMovies from "@/components/movies/TrendingMovies";
 import MovieGrid from "@/components/movies/MovieGrid";
-import movies from "@/data/movieData";
 import { useContext } from "react";
 import Context from "@/context/Context";
 import { CATEGORY_HOME } from "@/utilities/constants";
 
-const Movies = () => {
+const Movies = ({ content }) => {
   const { currentSearch, currentTab } = useContext(Context);
 
   const curSearch = currentSearch.trim().toLowerCase();
-  let renderedMovies = movies;
+  let renderedMovies = content;
 
   if (currentTab === "movies") {
     renderedMovies = renderedMovies.filter(
@@ -35,7 +34,7 @@ const Movies = () => {
   return (
     <div className="movies">
       {currentTab === CATEGORY_HOME && curSearch.length === 0 ? (
-        <TrendingMovies movies={movies} />
+        <TrendingMovies movies={renderedMovies} />
       ) : (
         <></>
       )}

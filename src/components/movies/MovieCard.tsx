@@ -16,7 +16,7 @@ const MovieCard = ({
   const [bookmarkState, setBookmarkState] = useState(isBookmarked);
   const { currentTab } = useContext(Context);
 
-  // Make sure trending content is only shown on the home page
+  // Make sure trending content is only shown on the home tab
   const isContentTrending = currentTab === CATEGORY_HOME && isTrending;
 
   const toggleBookmark = () => {

@@ -1,8 +1,9 @@
 import Context from "@/context/Context";
 import { useState } from "react";
+import { CATEGORY_HOME } from "@/utilities/constants";
 
 const ContextProvider = ({ children }) => {
-  const [currentTab, setCurrentTab] = useState("home");
+  const [currentTab, setCurrentTab] = useState(CATEGORY_HOME);
   const [currentSearch, setCurrentSearch] = useState("");
 
   const updateTab = (newTab) => {

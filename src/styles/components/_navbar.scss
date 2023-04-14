@@ -27,10 +27,16 @@
     display: grid;
     gap: $space-xmd;
     justify-items: center;
+
+    li:hover {
+      cursor: pointer;
+    }
   }
 
-  &__icon {
-
+  &__active {
+    path {
+      fill: $color-white;
+    }
   }
 
   &__avatar {
@@ -39,5 +45,4 @@
     border: 1.5px solid #fff;
     border-radius: 50%;
   }
-
 }

@@ -6,24 +6,39 @@ import {
   Logo,
 } from "@/components/Icons";
 import Image from "next/image";
+import { useContext } from "react";
+import Context from "@/context/Context";
+import { CATEGORY_HOME } from "@/utilities/constants";
 
 const NavBar = () => {
+  const { updateTab, currentTab } = useContext(Context);
+
   return (
     <nav className="navbar">
       <div className="navbar__top">
         <Logo cssClass="navbar__logo" />
         <ul className="navbar__list">
-          <li>
-            <IconNavHome cssClass="navbar__icon" />
+          <li onClick={() => updateTab(CATEGORY_HOME)}>
+            <IconNavHome
+              cssClass={`${
+                currentTab === CATEGORY_HOME ? "navbar__active" : ""
+              }`}
+            />
           </li>
-          <li>
-            <IconNavMovies cssClass="navbar__icon" />
+          <li onClick={() => updateTab("movies")}>
+            <IconNavMovies
+              cssClass={`${currentTab === "movies" ? "navbar__active" : ""}`}
+            />
           </li>
-          <li>
-            <IconNavTvSeries cssClass="navbar__icon" />
+          <li onClick={() => updateTab("tv-series")}>
+            <IconNavTvSeries
+              cssClass={`${currentTab === "tv-series" ? "navbar__active" : ""}`}
+            />
           </li>
-          <li>
-            <IconNavBookmark cssClass="navbar__icon" />
+          <li onClick={() => updateTab("bookmarks")}>
+            <IconNavBookmark
+              cssClass={`${currentTab === "bookmarks" ? "navbar__active" : ""}`}
+            />
           </li>
         </ul>
       </div>

@@ -25,13 +25,9 @@
     height: $space-h;
     width: 100%;
     flex-direction: row;
+    position: static;
   }
 
-  &__logo {
-    @media (max-width: $tablet) {
-      transform: translateX(50%);
-    }
-  }
 
   &__top {
     display: grid;
@@ -41,7 +37,7 @@
     @media (max-width: $tablet) {
       display: flex;
       width: 100%;
-      flex-direction: row-reverse;
+      flex-direction: row;
       justify-content: space-between;
     }
   }
@@ -54,6 +50,7 @@
 
     @media (max-width: $tablet) {
       display: flex;
+      transform: translateX(50%);
     }
 
     li:hover {

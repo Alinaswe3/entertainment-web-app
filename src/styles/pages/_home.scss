@@ -2,13 +2,14 @@
 
 .home {
   background-color: inherit;
-  padding: $space-md;
+  margin: $space-md;
   display: grid;
   grid-template-columns: max-content 1fr;
 
   @media (max-width: $tablet) {
     // max-content won't work because it doesn't allow for line breaks
     grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
 
   }
   // Creating a space between the navbar and main content
@@ -17,5 +18,11 @@
   &__main {
     overflow-y: auto;
     height: calc(100vh - $space-xlg);
+
+    @media (max-width: $tablet) {
+      // Fixed width in order to allow scrolling
+      // It changes because of column form now
+      height: calc(100vh - 20rem);
+    }
   }
 }

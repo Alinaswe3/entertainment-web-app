@@ -22,7 +22,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: end;
-    height: $space-h;
+    height: 72px;
     width: 100%;
     flex-direction: row;
     position: static;
@@ -39,6 +39,7 @@
       width: 100%;
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
     }
   }
 

@@ -1,10 +1,24 @@
 import { IconSearch } from "@/components/Icons";
 import { useContext, useRef } from "react";
 import Context from "@/context/Context";
+import {
+  CATEGORY_BOOKMARKS,
+  CATEGORY_MOVIES,
+  CATEGORY_TV_SERIES,
+  SEARCH_BOOKMARKS,
+  SEARCH_MOVIES,
+  SEARCH_MOVIES_OR_TV,
+  SEARCH_TV,
+} from "@/utilities/constants";
 
 const SearchBar = () => {
-  const { updateSearch } = useContext(Context);
+  const { updateSearch, currentTab } = useContext(Context);
   const inputRef = useRef<HTMLInputElement>(null!);
+
+  let placeholderText = SEARCH_MOVIES_OR_TV;
+  if (currentTab === CATEGORY_MOVIES) placeholderText = SEARCH_MOVIES;
+  if (currentTab === CATEGORY_TV_SERIES) placeholderText = SEARCH_TV;
+  if (currentTab === CATEGORY_BOOKMARKS) placeholderText = SEARCH_BOOKMARKS;
 
   const handleSearch = () => {
     updateSearch(inputRef.current.value);
@@ -23,7 +37,7 @@ const SearchBar = () => {
           id="search"
           className="heading--medium"
           type="text"
-          placeholder="Search for movies or TV series"
+          placeholder={placeholderText}
           autoComplete="off"
           ref={inputRef}
           onInput={handleSearch}

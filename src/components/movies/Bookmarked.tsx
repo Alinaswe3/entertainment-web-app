@@ -10,17 +10,29 @@ const Bookmarked = ({ content }) => {
   const series = content.filter(
     (movie) => movie.category === CATEGORY_TV_SERIES
   );
+  const seriesLength = series.length;
   const movies = content.filter((movie) => movie.category === CATEGORY_MOVIES);
+  const moviesLength = movies.length;
+
   // Only render when content is available
   return (
     <>
-      {movies.length > 0 ? (
+      {content.length < 1 ? (
+        <h2 className="heading--large">No bookmarks found</h2>
+      ) : (
+        <></>
+      )}
+      {moviesLength > 0 ? (
         <MovieGrid heading={BOOKMARKED_MOVIE_HEADING} movies={movies} />
       ) : (
         <></>
       )}
-      <div className="movies__separator"></div>
-      {series.length > 0 ? (
+      {moviesLength > 0 && seriesLength > 0 ? (
+        <div className="movies__separator"></div>
+      ) : (
+        <></>
+      )}
+      {seriesLength > 0 ? (
         <MovieGrid heading={BOOKMARKED_TV_SERIES_HEADING} movies={series} />
       ) : (
         <></>

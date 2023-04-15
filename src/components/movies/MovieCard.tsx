@@ -1,36 +1,30 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import MovieDescription from "@/components/movies/MovieDescription";
 import MovieHero from "@/components/movies/MovieHero";
 import Context from "@/context/Context";
 import { CATEGORY_HOME } from "@/utilities/constants";
 
 const MovieCard = ({
+  id,
   title,
   thumbnail,
   year,
   category,
   rating,
-  isBookmarked,
   isTrending,
 }) => {
-  const [bookmarkState, setBookmarkState] = useState(isBookmarked);
   const { currentTab } = useContext(Context);
 
   // Make sure trending content is only shown on the home tab
   const isContentTrending = currentTab === CATEGORY_HOME && isTrending;
 
-  const toggleBookmark = () => {
-    setBookmarkState((prevState) => !prevState);
-  };
-
   let movieHero = (
     <div className="movie-card__hero">
       <MovieHero
+        id={id}
         title={title}
         thumbnail={thumbnail}
         isTrending={isContentTrending}
-        isBookmarked={bookmarkState}
-        setBookmark={toggleBookmark}
       />
     </div>
   );
@@ -41,8 +35,6 @@ const MovieCard = ({
         title={title}
         thumbnail={thumbnail}
         isTrending={isContentTrending}
-        isBookmarked={bookmarkState}
-        setBookmark={toggleBookmark}
       />
     );
   }

@@ -20,7 +20,8 @@ const MovieGrid = ({ heading, movies }) => {
         {filteredMovies.map((movie) => {
           return (
             <MovieCard
-              key={movie.title + movie.year + movie.rating}
+              id={movie.id}
+              key={movie.id}
               title={movie.title}
               thumbnail={movie.thumbnail.regular.large}
               year={movie.year}

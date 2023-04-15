@@ -4,16 +4,16 @@ import {
   IconBookmarkFull,
   IconPlay,
 } from "@/components/Icons";
+import { useContext, useState } from "react";
+import Context from "@/context/Context";
 
-const MovieHero = ({
-  title,
-  thumbnail,
-  isBookmarked,
-  setBookmark,
-  isTrending,
-}) => {
+const MovieHero = ({ id, title, thumbnail, isTrending }) => {
+  const { bookmarked, updateBookmarked } = useContext(Context);
+  const [isBookmarked, setIsBookmarked] = useState(bookmarked.has(id));
+
   const toggleBookmark = () => {
-    setBookmark((prevState) => !prevState);
+    setIsBookmarked((prevState) => !prevState);
+    updateBookmarked(id, title);
   };
 
   return (

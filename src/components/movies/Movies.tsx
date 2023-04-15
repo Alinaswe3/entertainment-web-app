@@ -13,7 +13,7 @@ import {
 import Bookmarked from "@/components/movies/Bookmarked";
 
 const Movies = ({ content }) => {
-  const { currentSearch, currentTab } = useContext(Context);
+  const { currentSearch, currentTab, bookmarked } = useContext(Context);
 
   const curSearch = currentSearch.trim().toLowerCase();
 
@@ -34,7 +34,7 @@ const Movies = ({ content }) => {
     renderedHeading = CATEGORY_TV_SERIES;
   }
   if (currentTab === CATEGORY_BOOKMARKS) {
-    renderedMovies = renderedMovies.filter((movie) => movie.isBookmarked);
+    renderedMovies = renderedMovies.filter((movie) => bookmarked.has(movie.id));
   }
 
   // Searches for movie in list

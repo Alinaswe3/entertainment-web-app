@@ -50,8 +50,11 @@
       display: none;
       position: absolute;
       color: $color-red;
-      top: 12px;
-      left: 255px;
+      top: 1.2rem;
+      right: 1.2rem;
+
+      // Make sure error is always in right position
+      width: max-content;
     }
   }
 

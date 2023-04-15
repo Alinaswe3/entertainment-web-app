@@ -16,10 +16,34 @@
   align-items: center;
   border-radius: calc($space-sm + $space-sm);
 
+  @media (max-width: $tablet) {
+    // Grid allows for equally spaced columns
+    // Then flex box allow items to have equal space between
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+    height: $space-h;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  &__logo {
+    @media (max-width: $tablet) {
+      transform: translateX(50%);
+    }
+  }
+
   &__top {
     display: grid;
     gap: $space-xmd;
     justify-items: center;
+
+    @media (max-width: $tablet) {
+      display: flex;
+      width: 100%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
   }
 
   &__list {
@@ -27,6 +51,10 @@
     display: grid;
     gap: $space-xmd;
     justify-items: center;
+
+    @media (max-width: $tablet) {
+      display: flex;
+    }
 
     li:hover {
       cursor: pointer;

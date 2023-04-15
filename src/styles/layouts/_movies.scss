@@ -27,6 +27,10 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(16rem, 28rem));
       gap: $space-md;
+
+      @media (max-width: $tablet) {
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 22rem));
+      }
     }
   }
 }

@@ -27,7 +27,6 @@ const MovieGrid = ({ heading, movies }) => {
               year={movie.year}
               rating={movie.rating}
               category={movie.category}
-              isBookmarked={movie.isBookmarked}
               isTrending={movie.isTrending}
             />
           );

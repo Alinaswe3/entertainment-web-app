@@ -32,6 +32,7 @@ const MovieCard = ({
   if (isContentTrending) {
     movieHero = (
       <MovieHero
+        id={id}
         title={title}
         thumbnail={thumbnail}
         isTrending={isContentTrending}

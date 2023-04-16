@@ -27,7 +27,17 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(16rem, 28rem));
       gap: $space-md;
-      
+
+      @media (max-width: $tablet) {
+        // Make sure tablet has 3 columns
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 27rem));
+        justify-content: center;
+      }
+
+      @media (max-width: $mobile) {
+        // Make sure tablet has 3 columns
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 20rem));
+      }
     }
   }
 }

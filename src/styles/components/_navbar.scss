@@ -28,6 +28,10 @@
     position: static;
   }
 
+  @media (max-width: $mobile) {
+    border-radius: 0;
+  }
+
 
   &__top {
     display: grid;
@@ -52,6 +56,12 @@
     @media (max-width: $tablet) {
       display: flex;
       transform: translateX(50%);
+    }
+
+    @media (max-width: $mobile) {
+      transform: translateX(0);
+      position: fixed;
+      left: 30%;
     }
 
     li:hover {

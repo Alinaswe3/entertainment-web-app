@@ -29,6 +29,11 @@
     width: 47rem;
     height: 23rem;
 
+    @media (max-width: $mobile) {
+      width: 30rem;
+      height: 17.5rem;
+    }
+
     // Can be reused
     &-category {
       @include flex-center-horizontal(0.6rem);
@@ -91,6 +96,11 @@
     & .bookmark-adjust {
       left: 83%;
       top: 6%;
+
+      @media (max-width: $mobile) {
+        left: 77%;
+        top: 6%;
+      }
     }
   }
 
@@ -132,7 +142,7 @@
       position: absolute;
       width: $space-md;
       height: $space-md;
-      background-color: $color-dark-blue;
+      background-color: $color-light-blue;
       border: none;
       @include flex-center-all();
       border-radius: 50%;
@@ -140,6 +150,11 @@
       left: 90%;
       top: 6%;
       cursor: pointer;
+
+      @media (max-width: $mobile) {
+        left: 83%;
+        top: 6%;
+      }
     }
 
     &-thumbnail {

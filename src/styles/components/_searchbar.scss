@@ -8,6 +8,10 @@
   height: max-content;
   gap: $space-smd;
 
+  // Fixes the gaps shown when scrolling
+  transform: translateY(-5px) translateX(-5px);
+  width: 110%;
+
   // Make sure search bar is always above content
   background-color: $color-darker-blue;
   z-index: 15;

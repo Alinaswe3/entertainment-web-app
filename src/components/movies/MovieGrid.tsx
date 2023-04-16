@@ -2,10 +2,13 @@ import MovieCard from "@/components/movies/MovieCard";
 import { useContext } from "react";
 import Context from "@/context/Context";
 import { CATEGORY_HOME } from "@/utilities/constants";
+import useWindowDimensions from "@/utilities/hooks";
+import { setMovieThumbnailSize } from "@/utilities/helpers";
 
 const MovieGrid = ({ heading, movies }) => {
   const { currentTab } = useContext(Context);
 
+  const { width } = useWindowDimensions();
   let filteredMovies;
 
   // Let trending content to be rendered only when on home tab
@@ -23,7 +26,7 @@ const MovieGrid = ({ heading, movies }) => {
               id={movie.id}
               key={movie.id}
               title={movie.title}
-              thumbnail={movie.thumbnail.regular.large}
+              thumbnail={setMovieThumbnailSize(movie, width)}
               year={movie.year}
               rating={movie.rating}
               category={movie.category}

@@ -13,3 +13,7 @@ export const SEARCH_MOVIES_OR_TV = SEARCH_TEXT + "movies or TV series";
 export const SEARCH_MOVIES = SEARCH_TEXT + "movies";
 export const SEARCH_TV = SEARCH_TEXT + "TV series";
 export const SEARCH_BOOKMARKS = SEARCH_TEXT + "bookmarked shows";
+
+export const BROWSER_DESKTOP = 1440;
+export const BROWSER_TABLET = 768;
+export const BROWSER_MOBILE = 375;

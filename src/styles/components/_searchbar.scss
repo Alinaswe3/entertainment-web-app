@@ -5,12 +5,14 @@
   display: flex;
   position: sticky;
   top: 0;
+  transform: translateY(-4px); // Prevent gaps when scrolling
   height: max-content;
   gap: $space-smd;
 
-  // Fixes the gaps shown when scrolling
-  transform: translateY(-5px) translateX(-5px);
-  width: 110%;
+  @media (max-width: $tablet) {
+    // Fixes the gaps shown when scrolling
+    border-left: 5px solid $color-darker-blue;
+  }
 
   // Make sure search bar is always above content
   background-color: $color-darker-blue;
@@ -18,8 +20,8 @@
   padding-bottom: $space-smd;
 
   &__button {
-    border: none;
     background-color: inherit;
+    border: none;
     cursor: pointer;
   }
 

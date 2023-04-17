@@ -30,11 +30,11 @@
     @media (max-width: $tablet) {
       // Fixed width in order to allow scrolling
       // It changes because of column form now
-      height: calc(100vh - 20rem);
+      height: calc(100vh - 16rem);
     }
 
     @media (max-width: $mobile) {
-      height: calc(100vh - 15rem);
+      height: calc(100vh - 11rem);
       padding: 0 $space-xsm;
     }
   }

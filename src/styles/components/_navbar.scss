@@ -13,12 +13,14 @@
   display: grid;
   grid-template-rows: max-content 1fr max-content;
   justify-items: center;
+  align-items: center;
+  align-content: center;
   border-radius: calc($space-sm + $space-sm);
 
   @media (max-width: $tablet) {
     // Grid allows for equally spaced columns
     grid-template-columns: max-content 1fr max-content;
-    height: 72px;
+    height: $space-sh;
     width: 100%;
     position: static;
   }
@@ -33,11 +35,15 @@
     gap: $space-xmd;
     justify-items: center;
     flex-direction: column;
-    justify-self: center;
-    align-self: center;
+    align-self: start;
+    margin-top: $space-sh;
+
 
     @media (max-width: $tablet) {
+      justify-self: center;
       flex-direction: row;
+      margin: 0;
+      align-self: center;
     }
 
     li:hover {

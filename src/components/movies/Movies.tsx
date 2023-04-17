@@ -74,7 +74,6 @@ const Movies = ({ content }: { content: any }) => {
       ) : (
         <></>
       )}
-
       {currentTab !== CATEGORY_BOOKMARKS ? (
         <MovieGrid heading={renderedHeading} movies={renderedMovies} />
       ) : (

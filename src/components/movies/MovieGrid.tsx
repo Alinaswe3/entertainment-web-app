@@ -19,14 +19,14 @@ const MovieGrid = ({
   heading: string;
   movies: Array<contentType>;
 }) => {
-  const { currentTab }: any = useContext(Context);
+  const { currentTab, currentSearch }: any = useContext(Context);
 
   // Getting the dimensions of the browser window
   const { width }: any = useWindowDimensions();
   let filteredMovies;
 
   // Let trending content to be rendered only when on home tab
-  if (currentTab === CATEGORY_HOME)
+  if (currentTab === CATEGORY_HOME && currentSearch === "")
     filteredMovies = movies.filter((movie) => !movie.isTrending);
   else filteredMovies = movies;
 
@@ -44,7 +44,7 @@ const MovieGrid = ({
               year={movie.year}
               rating={movie.rating}
               category={movie.category}
-              isTrending={movie.isTrending}
+              isTrending={false}
             />
           );
         })}

@@ -7,16 +7,4 @@
   flex-direction: column;
   gap: 8.3rem;
   min-height: 100vh; // makes it occupy all available space
-
-  &__form {
-    background-color: $color-dark-blue;
-    border-radius: 1.6rem;
-    padding: $space-md;
-    width: 100%;
-    max-width: 40rem;
-  }
-
-  &--alt {
-    text-align: center;
-  }
 }

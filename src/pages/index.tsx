@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     // Pushing the user to login page after timer expires
     const timer = setTimeout(() => {
-      router.push("/login");
+      router.push("/home");
     }, 3000);
     // Clearing the timer
     return () => clearTimeout(timer);

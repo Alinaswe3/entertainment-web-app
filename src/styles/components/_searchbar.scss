@@ -3,13 +3,17 @@
 
 .searchbar {
   display: flex;
+
+  // allows for search bar to be always on top on scroll
   position: sticky;
   top: 0;
+
   height: max-content;
   gap: $space-smd;
-  transform: translateY(-4px);
+  transform: translateY(-4px); // prevents vertical gaps on scroll
   width: 100%;
-  // Fixes the gaps shown when scrolling
+
+  // Fixes the horizontal gaps shown when scrolling
   box-shadow: 0 0 6px 7px $color-darker-blue;
 
   // Make sure search bar is always above content
@@ -36,7 +40,7 @@
       transition: all 0.3s;
       padding: $space-xsm 0; // also fixes jerking from border addition
       color: $color-white;
-      caret-color: $color-red;
+      caret-color: $color-red; // makes blinking cursor have a differen color
       @include remove-auto-styles($color-white, $color-darker-blue);
       cursor: pointer;
 
@@ -51,7 +55,7 @@
     width: $space-md;
 
     & path {
-      fill: $color-white;
+      fill: $color-white; // changes the color of the svg icon
     }
   }
 }

@@ -1,11 +1,12 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
 
+// Styles for the authentication pages
 .auth {
   @include flex-center-all;
   flex-direction: column;
   gap: 8.3rem;
-  min-height: 100vh;
+  min-height: 100vh; // makes it occupy all available space
 
   &__form {
     background-color: $color-dark-blue;

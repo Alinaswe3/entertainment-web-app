@@ -28,6 +28,7 @@ body {
   color: $color-white;
 }
 
+// remove scroll bars from webkit based browsers
 ::-webkit-scrollbar {
   display: none;
 }

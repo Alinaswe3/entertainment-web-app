@@ -6,15 +6,13 @@
   display: grid;
   grid-template-columns: max-content 1fr;
 
-  @media (max-width: $tablet) {
-    // max-content won't work because it doesn't allow for line breaks
-    grid-template-columns: 1fr;
-    grid-template-rows: max-content 1fr;
-  }
   // Creating a space between the navbar and main content
   gap: $space-xmd;
 
   @media (max-width: $tablet) {
+    // max-content won't work because it doesn't allow for line breaks
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
     gap: $space-md;
   }
 
@@ -24,8 +22,13 @@
   }
 
   &__main {
+    // Makes home page scrollable
     overflow-y: auto;
     height: calc(100vh - $space-xlg);
+
+    // Removes scrollbars from non-webkit browsers
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     @media (max-width: $tablet) {
       // Fixed width in order to allow scrolling

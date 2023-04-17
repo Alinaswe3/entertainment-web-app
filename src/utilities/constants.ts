@@ -1,3 +1,5 @@
+// Constants used across applications
+
 export const CATEGORY_MOVIES = "Movie";
 export const CATEGORY_TV_SERIES = "TV Series";
 export const CATEGORY_BOOKMARKS = "Bookmarks";
@@ -14,6 +16,5 @@ export const SEARCH_MOVIES = SEARCH_TEXT + "movies";
 export const SEARCH_TV = SEARCH_TEXT + "TV series";
 export const SEARCH_BOOKMARKS = SEARCH_TEXT + "bookmarked shows";
 
-export const BROWSER_DESKTOP = 1440;
 export const BROWSER_TABLET = 768;
 export const BROWSER_MOBILE = 375;

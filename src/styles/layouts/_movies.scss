@@ -8,17 +8,21 @@
     overflow-x: auto;
     width: 100%;
     margin-bottom: $space-xmd;
+
+    // Removes scrollbars from non-webkit browsers
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   &__container {
     overflow-y: auto;
   }
 
+  // Separator between bookmarked tv shows and movies
   &__separator {
     width: 100%;
     margin: 2rem 0;
   }
-
 }
 
 .movie {
@@ -35,7 +39,7 @@
       }
 
       @media (max-width: $mobile) {
-        // Make sure tablet has 3 columns
+        // Make sure mobile has 3 columns
         grid-template-columns: repeat(auto-fit, minmax(16rem, 20rem));
       }
     }

@@ -3,26 +3,30 @@
 
 .navbar {
   // Makes the navbar remain sticky as user scrolls the page
-  position: sticky;
+  position: sticky; // make navbar remain sticky on side on scroll
   top: $space-md;
 
+  // gives appropriate height to scrollbar based on viewport height
   height: calc(100vh - $space-md - $space-md);
+
   background-color: $color-dark-blue;
   width: max-content;
   padding: $space-smd;
   display: grid;
+
+  // make sure small elements only take up the space they need
   grid-template-rows: max-content 1fr max-content;
+
   justify-items: center;
   align-items: center;
   align-content: center;
   border-radius: calc($space-sm + $space-sm);
 
   @media (max-width: $tablet) {
-    // Grid allows for equally spaced columns
     grid-template-columns: max-content 1fr max-content;
     height: $space-sh;
     width: 100%;
-    position: static;
+    position: static; // make navbar return to normal flow of page
   }
 
   @media (max-width: $mobile) {
@@ -35,15 +39,14 @@
     gap: $space-xmd;
     justify-items: center;
     flex-direction: column;
-    align-self: start;
+    align-self: start; // moves button list to top of navbar on desktop
     margin-top: $space-sh;
-
 
     @media (max-width: $tablet) {
       justify-self: center;
       flex-direction: row;
       margin: 0;
-      align-self: center;
+      align-self: center; // moves button list to center of navbar on desktop
     }
 
     li:hover {
@@ -53,7 +56,7 @@
 
   &__active {
     path {
-      fill: $color-white;
+      fill: $color-white; // changes color of svg icon
     }
   }
 
@@ -63,7 +66,7 @@
     border: 1.5px solid #fff;
     border-radius: 50%;
 
-    // Make sure avatar is at the end
+    // Make sure avatar is at the end of navbar
     justify-self: end;
     align-self: end;
   }

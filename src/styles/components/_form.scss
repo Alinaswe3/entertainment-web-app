@@ -8,6 +8,7 @@
 
   &-error {
     & div {
+      // makes error container to be displayed when error occurs
       display: block;
     }
 
@@ -42,12 +43,11 @@
           border-bottom: 0.1rem solid $color-red;
         }
       }
-
-
     }
 
+    // styles for error container of an input element
     &__error {
-      display: none;
+      display: none; // make sure its only displayed when error occurs
       position: absolute;
       color: $color-red;
       top: 1.2rem;
@@ -58,6 +58,7 @@
     }
   }
 
+  // Styles for submit button on form
   &__submit {
     font-family: inherit;
     padding: $space-xsm;

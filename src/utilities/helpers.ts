@@ -8,5 +8,5 @@ export const setMovieThumbnailSize = (content, width) => {
 
 export const setTrendingThumbnailSize = (content, width) => {
   if (width > BROWSER_MOBILE) return content.thumbnail.trending.large;
-  return content.thumbnail.regular.small;
+  return content.thumbnail.trending.small;
 };

@@ -1,13 +1,14 @@
 import MovieCard from "@/components/movies/MovieCard";
 import { setTrendingThumbnailSize } from "@/utilities/helpers";
 import useWindowDimensions from "@/utilities/hooks";
+import { contentType } from "@/utilities/types";
 
-const TrendingMovies = ({ movies }) => {
+const TrendingMovies = ({ movies }: { movies: Array<contentType> }) => {
   // Filtering movies for trending movies only
   const trendingMovies = movies.filter((movie) => movie.isTrending);
 
   // getting browser window dimensions
-  const { width } = useWindowDimensions();
+  const { width }: any = useWindowDimensions();
 
   return (
     <>

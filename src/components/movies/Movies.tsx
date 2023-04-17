@@ -11,14 +11,15 @@ import {
   MOVIE_HEADING,
 } from "@/utilities/constants";
 import Bookmarked from "@/components/movies/Bookmarked";
+import { contentType } from "@/utilities/types";
 
 /**
  * A component that renders the shows
  * @param content - the show objects to be rendered
  * @component
  */
-const Movies = ({ content }) => {
-  const { currentSearch, currentTab, bookmarked } = useContext(Context);
+const Movies = ({ content }: { content: any }) => {
+  const { currentSearch, currentTab, bookmarked }: any = useContext(Context);
 
   const curSearch = currentSearch.trim().toLowerCase();
 
@@ -31,7 +32,7 @@ const Movies = ({ content }) => {
   // for movies only
   if (currentTab === CATEGORY_MOVIES) {
     renderedMovies = renderedMovies.filter(
-      (movie) => movie.category === CATEGORY_MOVIES
+      (movie: contentType) => movie.category === CATEGORY_MOVIES
     );
     renderedHeading = MOVIE_HEADING;
   }
@@ -40,7 +41,7 @@ const Movies = ({ content }) => {
   // for tv series only
   if (currentTab === CATEGORY_TV_SERIES) {
     renderedMovies = renderedMovies.filter(
-      (movie) => movie.category === CATEGORY_TV_SERIES
+      (movie: contentType) => movie.category === CATEGORY_TV_SERIES
     );
     renderedHeading = CATEGORY_TV_SERIES;
   }
@@ -48,13 +49,15 @@ const Movies = ({ content }) => {
   // checks if on bookmarks tab and filters the content for
   // bookmarked content only
   if (currentTab === CATEGORY_BOOKMARKS) {
-    renderedMovies = renderedMovies.filter((movie) => bookmarked.has(movie.id));
+    renderedMovies = renderedMovies.filter((movie: contentType) =>
+      bookmarked.has(movie.id)
+    );
   }
 
   // Searches for movie in list and filters the content based on
   // content matching the search criteria
   if (curSearch !== "") {
-    renderedMovies = renderedMovies.filter((movie) =>
+    renderedMovies = renderedMovies.filter((movie: contentType) =>
       movie.title.toLowerCase().includes(curSearch)
     );
     // custom heading based on search query

@@ -1,18 +1,20 @@
 # Frontend Mentor - Entertainment web app solution
 
-This is a solution to the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X). Frontend Mentor challenges help you improve your coding skills by building realistic project.
+This is a solution to
+the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X)
+. Frontend Mentor challenges help you improve your coding skills by building realistic project.
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -28,7 +30,8 @@ Users should be able to:
 - Add/Remove bookmarks from all movies and TV series
 - Search for relevant shows on all pages
 - **Bonus**: Build this project as a full-stack application
-- **Bonus**: If you're building a full-stack app, we provide authentication screen (sign-up/login) designs if you'd like to create an auth flow
+- **Bonus**: If you're building a full-stack app, we provide authentication screen (sign-up/login) designs if you'd like
+  to create an auth flow
 
 ### Screenshot
 
@@ -43,8 +46,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution URL](https://your-solution-url.com)
+- Live Site URL: [live site URL](https://your-live-site-url.com)
 
 ## My process
 
@@ -62,7 +65,10 @@ Users should be able to:
 
 ### What I learned
 
-I learnt a lot of how react actually works. I learned how to manage state with useState and context API. and I also learned how to handle side-effects with useEffect. This was a great experience as it allowed me to reinforce these topics and some other fundamental concepts like callbacks, scope and many more. I also got some experience with TypeScript which really helped me to catch bugs to deal with data types.
+I learnt a lot of how react actually works. I learned how to manage state with useState and context API. and I also
+learned how to handle side-effects with useEffect. This was a great experience as it allowed me to reinforce these
+topics and some other fundamental concepts like callbacks, scope and many more. I also got some experience with
+TypeScript which really helped me to catch bugs to deal with data types.
 
 Some code I was really proud of writing and shocked are shown below:
 
@@ -71,32 +77,31 @@ Some code I was really proud of writing and shocked are shown below:
 ```TypeScript
   const updateBookmarked = useCallback((contentId, contentTitle) => {
     if (!bookmarked.has(contentId)) {
-      setBookmarked((prevState) => prevState.set(contentId, contentTitle));
+        setBookmarked((prevState) => prevState.set(contentId, contentTitle));
     } else {
-      setBookmarked((prevState) => {
-        prevState.delete(contentId);
-        return prevState;
-      });
+        setBookmarked((prevState) => {
+            prevState.delete(contentId);
+            return prevState;
+        });
     }
-  }, []);
+}, []);
 ```
 
 2. CSS code for hover state changes
 
 ```css
 .movie-card__item:hover .movie-card__item-modal {
-  visibility: visible;
+    visibility: visible;
 }
 
 .movie-card__item-modal {
-  top: 0;
-  left: 0;
-  visibility: hidden; // makes modal hidden until hovered
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  @include flex-center-all;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+/ / makes modal hidden until hovered position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 ```
 
@@ -104,28 +109,30 @@ Some code I was really proud of writing and shocked are shown below:
 
 ```jsx
 <div className="movies">
-  {currentTab === CATEGORY_HOME && curSearch.length === 0 ? (
-    <TrendingMovies movies={renderedMovies} />
-  ) : (
-    <></>
-  )}
+    {currentTab === CATEGORY_HOME && curSearch.length === 0 ? (
+        <TrendingMovies movies={renderedMovies}/>
+    ) : (
+        <></>
+    )}
 
-  {currentTab !== CATEGORY_BOOKMARKS ? (
-    <MovieGrid heading={renderedHeading} movies={renderedMovies} />
-  ) : (
-    <Bookmarked content={renderedMovies} />
-  )}
+    {currentTab !== CATEGORY_BOOKMARKS ? (
+        <MovieGrid heading={renderedHeading} movies={renderedMovies}/>
+    ) : (
+        <Bookmarked content={renderedMovies}/>
+    )}
 </div>
 ```
 
 ### Continued development
 
 Going forward I want to learn how to properly manage the
-application state and use good and efficient optimizations whenever possible. Also I want to focus on writing very responsive CSS, and semantic HTML which is not a topic that is talked about a lot.
+application state and use good and efficient optimizations whenever possible. Also I want to focus on writing very
+responsive CSS, and semantic HTML which is not a topic that is talked about a lot.
 
 ### Useful resources
 
-- [ChatGPT](https://chat.openai.com/) - This is an amazing resource that helped me understand documentation easier and quicker plus also helped me understand some errors in the code.
+- [ChatGPT](https://chat.openai.com/) - This is an amazing resource that helped me understand documentation easier and
+  quicker plus also helped me understand some errors in the code.
 - [CSS Loaders](https://cssloaders.github.io/) - A good resource to find css loaders which are already animated
 
 ## Author
@@ -136,4 +143,6 @@ application state and use good and efficient optimizations whenever possible. Al
 
 ## Acknowledgments
 
-I would really like to acknowledge OpenAi for [chatGPT](https://chat.openai.com/) which helped me resolve errors quickly and effectively. I would encourage developers to utilize this powerful tool during development as it reduces the development time.
+I would really like to acknowledge OpenAi for [chatGPT](https://chat.openai.com/) which helped me resolve errors quickly
+and effectively. I would encourage developers to utilize this powerful tool during development as it reduces the
+development time.

@@ -20,7 +20,7 @@ import {
  * @component
  */
 const NavBar = () => {
-  const { updateTab, currentTab } = useContext(Context);
+  const { updateTab, currentTab }: any = useContext(Context);
 
   return (
     <nav className="navbar">

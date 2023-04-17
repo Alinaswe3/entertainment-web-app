@@ -16,7 +16,7 @@ import {
  * @constructor
  */
 const SearchBar = () => {
-  const { updateSearch, currentTab } = useContext(Context);
+  const { updateSearch, currentTab }: any = useContext(Context);
   const inputRef = useRef<HTMLInputElement>(null!);
 
   // Choosing the placeholder text to be place on input based

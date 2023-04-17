@@ -15,8 +15,18 @@ import Context from "@/context/Context";
  * @param isTrending - true if movie is trending
  * @component
  */
-const MovieHero = ({ id, title, thumbnail, isTrending }) => {
-  const { bookmarked, updateBookmarked } = useContext(Context);
+const MovieHero = ({
+  id,
+  title,
+  thumbnail,
+  isTrending,
+}: {
+  id: string;
+  title: string;
+  thumbnail: any;
+  isTrending: boolean;
+}) => {
+  const { bookmarked, updateBookmarked }: any = useContext(Context);
 
   // State whether movie is bookmarked or not
   const [isBookmarked, setIsBookmarked] = useState(bookmarked.has(id));
@@ -25,7 +35,7 @@ const MovieHero = ({ id, title, thumbnail, isTrending }) => {
    * Toggles the bookmark to be active or not
    */
   const toggleBookmark = () => {
-    setIsBookmarked((prevState) => !prevState);
+    setIsBookmarked((prevState: boolean) => !prevState);
 
     // updating the map of bookmarks in the context
     updateBookmarked(id, title);
@@ -36,7 +46,7 @@ const MovieHero = ({ id, title, thumbnail, isTrending }) => {
       <div className="movie-card__item-modal">
         <div className="modal-background"></div>
         <div className="movie-card__item-play">
-          <IconPlay />
+          <IconPlay cssClass={""} />
           <span className="heading--extra-small">Play</span>
           <div className="play-background"></div>
         </div>
@@ -54,7 +64,11 @@ const MovieHero = ({ id, title, thumbnail, isTrending }) => {
         }`}
         onClick={toggleBookmark}
       >
-        {isBookmarked ? <IconBookmarkFull /> : <IconBookmarkEmpty />}
+        {isBookmarked ? (
+          <IconBookmarkFull cssClass={""} />
+        ) : (
+          <IconBookmarkEmpty cssClass={""} />
+        )}
       </button>
     </>
   );

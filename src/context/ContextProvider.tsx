@@ -1,5 +1,5 @@
 import Context from "@/context/Context";
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { CATEGORY_HOME } from "@/utilities/constants";
 
 /**
@@ -7,7 +7,7 @@ import { CATEGORY_HOME } from "@/utilities/constants";
  * @param children - child components to use context
  * @component
  */
-const ContextProvider = ({ children }) => {
+const ContextProvider = ({ children }: { children: JSX.Element }) => {
   // State managed in context
 
   // current tab user is on
@@ -25,7 +25,7 @@ const ContextProvider = ({ children }) => {
    * useCallback in order to prevent a new update function to be always
    * created
    */
-  const updateTab = useCallback((newTab) => {
+  const updateTab = useCallback((newTab: string) => {
     setCurrentTab(newTab);
   }, []);
 
@@ -35,7 +35,7 @@ const ContextProvider = ({ children }) => {
    * useCallback in order to prevent a new update function to be always
    * created
    */
-  const updateSearch = useCallback((newSearch) => {
+  const updateSearch = useCallback((newSearch: string) => {
     setCurrentSearch(newSearch);
   }, []);
 
@@ -44,16 +44,19 @@ const ContextProvider = ({ children }) => {
    * useCallback in order to prevent a new update function to be always
    * created
    */
-  const updateBookmarked = useCallback((contentId, contentTitle) => {
-    if (!bookmarked.has(contentId)) {
-      setBookmarked((prevState) => prevState.set(contentId, contentTitle));
-    } else {
-      setBookmarked((prevState) => {
-        prevState.delete(contentId);
-        return prevState;
-      });
-    }
-  }, []);
+  const updateBookmarked = useCallback(
+    (contentId: string, contentTitle: string) => {
+      if (!bookmarked.has(contentId)) {
+        setBookmarked((prevState) => prevState.set(contentId, contentTitle));
+      } else {
+        setBookmarked((prevState) => {
+          prevState.delete(contentId);
+          return prevState;
+        });
+      }
+    },
+    []
+  );
 
   return (
     <Context.Provider

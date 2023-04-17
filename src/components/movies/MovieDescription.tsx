@@ -9,7 +9,19 @@ import { IconCategoryMovie, IconCategoryTv } from "@/components/Icons";
  * @param isTrending - true if movie is trending
  * @component
  */
-const MovieDescription = ({ title, year, category, rating, isTrending }) => {
+const MovieDescription = ({
+  title,
+  year,
+  category,
+  rating,
+  isTrending,
+}: {
+  title: string;
+  year: number;
+  category: string;
+  rating: string;
+  isTrending: boolean;
+}) => {
   return (
     <div className={`${isTrending ? "trend-movies" : "movie-card"}__details`}>
       <div className="movie-card__description">
@@ -18,9 +30,9 @@ const MovieDescription = ({ title, year, category, rating, isTrending }) => {
         <span className="body-text body-text--medium movie-card__item-category">
           {/*Choosing icon to render base on the category*/}
           {category.toLowerCase() === "movie" ? (
-            <IconCategoryMovie />
+            <IconCategoryMovie cssClass={""} />
           ) : (
-            <IconCategoryTv />
+            <IconCategoryTv cssClass={""} />
           )}
           {category}
         </span>

@@ -1,4 +1,8 @@
-export const IconSearch = ({ cssClass }) => {
+interface iconType {
+  cssClass: string;
+}
+
+export const IconSearch = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}
@@ -14,7 +18,7 @@ export const IconSearch = ({ cssClass }) => {
   );
 };
 
-export const IconPlay = ({ cssClass }) => {
+export const IconPlay = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}
@@ -30,7 +34,7 @@ export const IconPlay = ({ cssClass }) => {
   );
 };
 
-export const IconNavTvSeries = ({ cssClass }) => {
+export const IconNavTvSeries = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}
@@ -46,7 +50,7 @@ export const IconNavTvSeries = ({ cssClass }) => {
   );
 };
 
-export const IconNavMovies = ({ cssClass }) => {
+export const IconNavMovies = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}
@@ -62,7 +66,7 @@ export const IconNavMovies = ({ cssClass }) => {
   );
 };
 
-export const IconNavHome = ({ cssClass }) => {
+export const IconNavHome = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}
@@ -78,7 +82,7 @@ export const IconNavHome = ({ cssClass }) => {
   );
 };
 
-export const IconNavBookmark = ({ cssClass }) => {
+export const IconNavBookmark = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}
@@ -94,7 +98,7 @@ export const IconNavBookmark = ({ cssClass }) => {
   );
 };
 
-export const IconCategoryTv = ({ cssClass }) => {
+export const IconCategoryTv = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}
@@ -111,7 +115,7 @@ export const IconCategoryTv = ({ cssClass }) => {
   );
 };
 
-export const IconCategoryMovie = ({ cssClass }) => {
+export const IconCategoryMovie = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}
@@ -128,7 +132,7 @@ export const IconCategoryMovie = ({ cssClass }) => {
   );
 };
 
-export const IconBookmarkFull = ({ cssClass }) => {
+export const IconBookmarkFull = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}
@@ -144,7 +148,7 @@ export const IconBookmarkFull = ({ cssClass }) => {
   );
 };
 
-export const IconBookmarkEmpty = ({ cssClass }) => {
+export const IconBookmarkEmpty = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}
@@ -162,7 +166,7 @@ export const IconBookmarkEmpty = ({ cssClass }) => {
   );
 };
 
-export const Logo = ({ cssClass }) => {
+export const Logo = ({ cssClass }: iconType) => {
   return (
     <svg
       className={cssClass}

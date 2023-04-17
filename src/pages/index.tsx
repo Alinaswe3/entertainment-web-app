@@ -22,7 +22,7 @@ export default function Home() {
     <div className="auth">
       <div className="landing__content">
         <h2 className="landing__heading">Welcome</h2>
-        <Logo />
+        <Logo cssClass={""} />
         <span className="loader"></span>
       </div>
     </div>

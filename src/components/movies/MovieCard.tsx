@@ -3,6 +3,7 @@ import MovieDescription from "@/components/movies/MovieDescription";
 import MovieHero from "@/components/movies/MovieHero";
 import Context from "@/context/Context";
 import { CATEGORY_HOME } from "@/utilities/constants";
+import { contentType } from "@/utilities/types";
 
 /**
  * A component that renders a movie card
@@ -23,8 +24,8 @@ const MovieCard = ({
   category,
   rating,
   isTrending,
-}) => {
-  const { currentTab } = useContext(Context);
+}: contentType) => {
+  const { currentTab }: any = useContext(Context);
 
   // Make sure trending content is only shown on the home tab
   const isContentTrending = currentTab === CATEGORY_HOME && isTrending;

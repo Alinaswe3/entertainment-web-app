@@ -4,6 +4,7 @@ import Context from "@/context/Context";
 import { CATEGORY_HOME } from "@/utilities/constants";
 import useWindowDimensions from "@/utilities/hooks";
 import { setMovieThumbnailSize } from "@/utilities/helpers";
+import { contentType } from "@/utilities/types";
 
 /**
  * A component that renders movies in a particular grid
@@ -11,11 +12,17 @@ import { setMovieThumbnailSize } from "@/utilities/helpers";
  * @param movies - an array of movie objects to be rendered
  * @component
  */
-const MovieGrid = ({ heading, movies }) => {
-  const { currentTab } = useContext(Context);
+const MovieGrid = ({
+  heading,
+  movies,
+}: {
+  heading: string;
+  movies: Array<contentType>;
+}) => {
+  const { currentTab }: any = useContext(Context);
 
   // Getting the dimensions of the browser window
-  const { width } = useWindowDimensions();
+  const { width }: any = useWindowDimensions();
   let filteredMovies;
 
   // Let trending content to be rendered only when on home tab

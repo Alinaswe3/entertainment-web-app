@@ -10,21 +10,16 @@
   background-color: $color-dark-blue;
   width: max-content;
   padding: $space-smd;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  justify-items: center;
   border-radius: calc($space-sm + $space-sm);
 
   @media (max-width: $tablet) {
     // Grid allows for equally spaced columns
-    // Then flex box allow items to have equal space between
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: end;
+    grid-template-columns: max-content 1fr max-content;
     height: 72px;
     width: 100%;
-    flex-direction: row;
     position: static;
   }
 
@@ -32,36 +27,17 @@
     border-radius: 0;
   }
 
-
-  &__top {
-    display: grid;
-    gap: $space-xmd;
-    justify-items: center;
-
-    @media (max-width: $tablet) {
-      display: flex;
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
   &__list {
     list-style: none;
-    display: grid;
+    display: flex;
     gap: $space-xmd;
     justify-items: center;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
 
     @media (max-width: $tablet) {
-      display: flex;
-      transform: translateX(50%);
-    }
-
-    @media (max-width: $mobile) {
-      transform: translateX(0);
-      position: fixed;
-      left: 30%;
+      flex-direction: row;
     }
 
     li:hover {
@@ -80,5 +56,9 @@
     height: 4rem;
     border: 1.5px solid #fff;
     border-radius: 50%;
+
+    // Make sure avatar is at the end
+    justify-self: end;
+    align-self: end;
   }
 }

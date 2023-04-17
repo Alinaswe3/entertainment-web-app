@@ -20,39 +20,35 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar__top">
-        <Logo cssClass="navbar__logo" />
-        <ul className="navbar__list">
-          <li onClick={() => updateTab(CATEGORY_HOME)}>
-            <IconNavHome
-              cssClass={`${
-                currentTab === CATEGORY_HOME ? "navbar__active" : ""
-              }`}
-            />
-          </li>
-          <li onClick={() => updateTab(CATEGORY_MOVIES)}>
-            <IconNavMovies
-              cssClass={`${
-                currentTab === CATEGORY_MOVIES ? "navbar__active" : ""
-              }`}
-            />
-          </li>
-          <li onClick={() => updateTab(CATEGORY_TV_SERIES)}>
-            <IconNavTvSeries
-              cssClass={`${
-                currentTab === CATEGORY_TV_SERIES ? "navbar__active" : ""
-              }`}
-            />
-          </li>
-          <li onClick={() => updateTab(CATEGORY_BOOKMARKS)}>
-            <IconNavBookmark
-              cssClass={`${
-                currentTab === CATEGORY_BOOKMARKS ? "navbar__active" : ""
-              }`}
-            />
-          </li>
-        </ul>
-      </div>
+      <Logo cssClass="navbar__logo" />
+      <ul className="navbar__list">
+        <li onClick={() => updateTab(CATEGORY_HOME)}>
+          <IconNavHome
+            cssClass={`${currentTab === CATEGORY_HOME ? "navbar__active" : ""}`}
+          />
+        </li>
+        <li onClick={() => updateTab(CATEGORY_MOVIES)}>
+          <IconNavMovies
+            cssClass={`${
+              currentTab === CATEGORY_MOVIES ? "navbar__active" : ""
+            }`}
+          />
+        </li>
+        <li onClick={() => updateTab(CATEGORY_TV_SERIES)}>
+          <IconNavTvSeries
+            cssClass={`${
+              currentTab === CATEGORY_TV_SERIES ? "navbar__active" : ""
+            }`}
+          />
+        </li>
+        <li onClick={() => updateTab(CATEGORY_BOOKMARKS)}>
+          <IconNavBookmark
+            cssClass={`${
+              currentTab === CATEGORY_BOOKMARKS ? "navbar__active" : ""
+            }`}
+          />
+        </li>
+      </ul>
       <Image
         src="/image-avatar.png"
         alt="User profile picture"

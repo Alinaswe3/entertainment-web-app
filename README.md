@@ -7,14 +7,14 @@ the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmen
 ## Table of contents
 
 - [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
-    - [Links](#links)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
 - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-    - [Useful resources](#useful-resources)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -36,7 +36,7 @@ Users should be able to:
 ### Screenshot
 
 1. Desktop screenshot
-   ![](./screenshots/snap-desktop.png)
+   ![](./screenshots/snap-desktop.webp)
 
 2. Tablet screenshot
    ![](./screenshots/snap-tablet.png)
@@ -109,17 +109,17 @@ Some code I was really proud of writing and shocked are shown below:
 
 ```jsx
 <div className="movies">
-    {currentTab === CATEGORY_HOME && curSearch.length === 0 ? (
-        <TrendingMovies movies={renderedMovies}/>
-    ) : (
-        <></>
-    )}
+  {currentTab === CATEGORY_HOME && curSearch.length === 0 ? (
+    <TrendingMovies movies={renderedMovies} />
+  ) : (
+    <></>
+  )}
 
-    {currentTab !== CATEGORY_BOOKMARKS ? (
-        <MovieGrid heading={renderedHeading} movies={renderedMovies}/>
-    ) : (
-        <Bookmarked content={renderedMovies}/>
-    )}
+  {currentTab !== CATEGORY_BOOKMARKS ? (
+    <MovieGrid heading={renderedHeading} movies={renderedMovies} />
+  ) : (
+    <Bookmarked content={renderedMovies} />
+  )}
 </div>
 ```
 
@@ -144,5 +144,5 @@ responsive CSS, and semantic HTML which is not a topic that is talked about a lo
 ## Acknowledgments
 
 I would really like to acknowledge OpenAi for [chatGPT](https://chat.openai.com/) which helped me resolve errors quickly
-and effectively. I would encourage developers to utilize this powerful tool during development as it reduces the
+and effectively. I would encourage developers to utilize this powerfulp tool during development as it reduces the
 development time.

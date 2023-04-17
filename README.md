@@ -39,10 +39,10 @@ Users should be able to:
    ![](./screenshots/snap-desktop.webp)
 
 2. Tablet screenshot
-   ![](./screenshots/snap-tablet.png)
+   ![](./screenshots/snap-tablet.webp)
 
 3. Mobile screenshot
-   ![](./screenshots/snap-mobile.png)
+   ![](./screenshots/snap-mobile.webp)
 
 ### Links
 

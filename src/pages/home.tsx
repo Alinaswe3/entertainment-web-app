@@ -5,7 +5,13 @@ import ContextProvider from "@/context/ContextProvider";
 import path from "path";
 import * as fs from "fs";
 
+/**
+ * Page component that renders the home page
+ * @param data - preloaded data of shows
+ * @constructor
+ */
 const Home = ({ data }) => {
+  // Providing the context to all child components
   return (
     <ContextProvider>
       <main className="home">

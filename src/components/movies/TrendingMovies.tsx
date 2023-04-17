@@ -3,7 +3,10 @@ import { setTrendingThumbnailSize } from "@/utilities/helpers";
 import useWindowDimensions from "@/utilities/hooks";
 
 const TrendingMovies = ({ movies }) => {
+  // Filtering movies for trending movies only
   const trendingMovies = movies.filter((movie) => movie.isTrending);
+
+  // getting browser window dimensions
   const { width } = useWindowDimensions();
 
   return (

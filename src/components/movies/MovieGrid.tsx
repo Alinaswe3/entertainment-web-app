@@ -5,9 +5,16 @@ import { CATEGORY_HOME } from "@/utilities/constants";
 import useWindowDimensions from "@/utilities/hooks";
 import { setMovieThumbnailSize } from "@/utilities/helpers";
 
+/**
+ * A component that renders movies in a particular grid
+ * @param heading - the heading of the movie grid
+ * @param movies - an array of movie objects to be rendered
+ * @component
+ */
 const MovieGrid = ({ heading, movies }) => {
   const { currentTab } = useContext(Context);
 
+  // Getting the dimensions of the browser window
   const { width } = useWindowDimensions();
   let filteredMovies;
 

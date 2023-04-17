@@ -4,6 +4,17 @@ import MovieHero from "@/components/movies/MovieHero";
 import Context from "@/context/Context";
 import { CATEGORY_HOME } from "@/utilities/constants";
 
+/**
+ * A component that renders a movie card
+ * @param id - unique id for a certain show
+ * @param title - title of the show
+ * @param thumbnail - path to thumbnail of the show
+ * @param year - year the show was released
+ * @param category - category to which show belongs i.e. movie or tv series
+ * @param rating - rating of the show
+ * @param isTrending - true if movie is trending
+ * @component
+ */
 const MovieCard = ({
   id,
   title,
@@ -19,6 +30,7 @@ const MovieCard = ({
   const isContentTrending = currentTab === CATEGORY_HOME && isTrending;
 
   let movieHero = (
+    // extra div if movie is not trending
     <div className="movie-card__hero">
       <MovieHero
         id={id}

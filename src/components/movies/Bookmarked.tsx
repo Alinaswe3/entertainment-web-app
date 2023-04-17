@@ -6,7 +6,13 @@ import {
   CATEGORY_TV_SERIES,
 } from "@/utilities/constants";
 
+/**
+ * A component that render the bookmarked content only
+ * @param content - array of the shows to be rendered
+ * @component
+ */
 const Bookmarked = ({ content }) => {
+  // Grouping the content based on whether it's a movie or tv series
   const series = content.filter(
     (movie) => movie.category === CATEGORY_TV_SERIES
   );
@@ -14,7 +20,6 @@ const Bookmarked = ({ content }) => {
   const movies = content.filter((movie) => movie.category === CATEGORY_MOVIES);
   const moviesLength = movies.length;
 
-  // Only render when content is available
   return (
     <>
       {content.length < 1 ? (

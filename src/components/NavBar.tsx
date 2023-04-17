@@ -15,6 +15,10 @@ import {
   CATEGORY_TV_SERIES,
 } from "@/utilities/constants";
 
+/**
+ * A component that renders the nav bar
+ * @component
+ */
 const NavBar = () => {
   const { updateTab, currentTab } = useContext(Context);
 
@@ -22,6 +26,7 @@ const NavBar = () => {
     <nav className="navbar">
       <Logo cssClass="navbar__logo" />
       <ul className="navbar__list">
+        {/*sets the current tab open and gives the icon the active css class*/}
         <li onClick={() => updateTab(CATEGORY_HOME)}>
           <IconNavHome
             cssClass={`${currentTab === CATEGORY_HOME ? "navbar__active" : ""}`}

@@ -29,19 +29,27 @@
   &-grid {
     &__list {
       // moved layout to max of 1fr in order to maximise responsiveness
+      /**
+      BRIEF NOTE
+      The auto-fit container will adjust the size of the grid tracks to fill the available space
+      and remove any empty tracks. This means that the grid items will stretch to fill the space,
+      and the grid will look more compact.
+      The auto-fill container will create empty tracks to fill the remaining space. This means
+      that the grid items will maintain their size, and the grid will look more spaced out.
+       */
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
       gap: $space-md;
 
       @media (max-width: $tablet) {
         // Make sure tablet has 3 columns
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         justify-content: center;
       }
 
       @media (max-width: $mobile) {
         // Make sure mobile has 3 columns
-        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
       }
     }
   }

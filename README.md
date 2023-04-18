@@ -35,18 +35,13 @@ Users should be able to:
 
 ### Screenshot
 
-1. Desktop screenshot
-   ![](./screenshots/snap-desktop.webp)
+A screenshot of the site taken on a desktop
 
-2. Tablet screenshot
-   ![](./screenshots/snap-tablet.webp)
-
-3. Mobile screenshot
-   ![](./screenshots/snap-mobile.webp)
+![](./screenshots/snap-desktop.webp)
 
 ### Links
 
-- Solution URL: [Solution URL](https://your-solution-url.com)
+- Solution URL: [Solution URL](https://github.com/Alinaswe3/entertainment-web-app)
 - Live Site URL: [Live site URL](https://zetflix-movies.netlify.app/)
 
 ## My process

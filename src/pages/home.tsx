@@ -15,7 +15,7 @@ const Home = ({ data }: { data: contentType }) => {
   // Providing the context to all child components
   return (
     <ContextProvider>
-      <main className="home">
+      <main className="home" role="main">
         <NavBar />
         <div className="home__main">
           <SearchBar />

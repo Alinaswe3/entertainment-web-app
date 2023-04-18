@@ -23,7 +23,7 @@ const NavBar = () => {
   const { updateTab, currentTab }: any = useContext(Context);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation">
       <Logo cssClass="navbar__logo" />
       <ul className="navbar__list">
         {/*sets the current tab open and gives the icon the active css class*/}
